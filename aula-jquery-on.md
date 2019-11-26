@@ -53,6 +53,17 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
 
 ### Seletores do Jquery X seletores do objeto document
 
-    
+* $("p") – seleciona todos os elementos **\<p>**
+* $("[href]") – seleciona todos os elementos que possuem o **atributo** href
+* $("#algumId") – seleciona todos os elementos onde **id="algumId"**
+* $(".classes") – seleciona todos os elementos onde **class="classes"**
+* $("p#algumId") – seleciona todos os elementos **\<p> onde id="algumId"**
+* $("p.algumaClasse") – seleciona todos os elementos **\<p> onde class="algumaClasse"**
+* $("p:first") – seleciona o primeiro elemento **\<p>**
+* $("ul li:first") – seleciona o primeiro elemento **\<li> de um elemento \<ul>**
+* $(":even") – seleciona todos os **elementos pares** (utilizável em tabelas, listas e afins)
+* $(":odd") – seleciona todos os **elementos ímpares** (utilizável em tabelas, listas e afins)
+            
+
 
 
