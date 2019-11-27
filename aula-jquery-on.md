@@ -1,8 +1,6 @@
 
-Eventos do browser
-Eventos do teclado e do mouse
 Eventos em formulários
-Efeitos (Ex: Toggle, Hide, FadeIn e FadeOut)
+TOGGLE
 Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: https://pixelcog.github.io/parallax.js/)
 
 
