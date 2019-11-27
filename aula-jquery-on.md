@@ -9,31 +9,31 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
 
 # jQuery é um framework de JavaScript
     
-    É uma biblioteca open-source para facilitar o desenvolvimento com o lema "write less, do more". (Escreva menos, faça mais.)
-    
-    É um compilado de métodos prontos em JavaScript para escrever menos código, criado em 2006. 
+É uma biblioteca open-source para facilitar o desenvolvimento com o lema "write less, do more". (Escreva menos, faça mais.)
+
+É um compilado de métodos prontos em JavaScript para escrever menos código, criado em 2006. 
 
 
 ### Alguns recursos e vantagens que o jQuery oferece:
 
-*Seleção e manipulação de elementos HTML
-*Manipulação de CSS
-*Efeitos e animações
-*Navegação pelo DOM
-*AJAX de forma simples
-*Eventos
-*Open-source
-*Facilidade de leitura do código
+* Seleção e manipulação de elementos HTML
+* Manipulação de CSS
+* Efeitos e animações
+* Navegação pelo DOM
+* AJAX de forma simples
+* Eventos
+* Open-source
+* Facilidade de leitura do código
 
 ### Como instalar o jQuery via Content Delivery Network(CDN)
 
-    Na instalação via CDN, usar o código compactado.
+Na instalação via CDN, usar o código compactado.
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
         (Google CDN)    
     
-    Para incluir no código:
+Para incluir no código:
     
 
         <!doctype html>
@@ -43,7 +43,6 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
             <title>Demo</title>
         </head>
         <body>
-            <script src="jquery.js"></script>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
             <script>
         
