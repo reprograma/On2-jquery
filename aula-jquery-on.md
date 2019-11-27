@@ -1,7 +1,4 @@
-O que é o Jquery e quando usá-lo
-Como instalar no projeto via CDN
-Seletores do Jquery X seletores do objeto document
-Métodos para manipular e capturar atributos do HTML
+
 Eventos do browser
 Eventos do teclado e do mouse
 Eventos em formulários
@@ -11,10 +8,13 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
 
 
 # jQuery é um framework de JavaScript
-    É um compilado de métodos prontos em JavaScript para escrever menos código e fazer mais em menos tempo. 
+    
+    É uma biblioteca open-source para facilitar o desenvolvimento com o lema "write less, do more". (Escreva menos, faça mais.)
+    
+    É um compilado de métodos prontos em JavaScript para escrever menos código, criado em 2006. 
 
 
-### Alguns recursos que o jQuery oferece:
+### Alguns recursos e vantagens que o jQuery oferece:
 
 *Seleção e manipulação de elementos HTML
 *Manipulação de CSS
@@ -22,17 +22,19 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
 *Navegação pelo DOM
 *AJAX de forma simples
 *Eventos
+*Open-source
+*Facilidade de leitura do código
 
-### Como instalar o jQuery via CDN
+### Como instalar o jQuery via Content Delivery Network(CDN)
 
     Na instalação via CDN, usar o código compactado.
 
-        npm install jquery
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+        (Google CDN)    
+    
     Para incluir no código:
-
-        <script src="jquery.min.js"></script>
-
+    
 
         <!doctype html>
         <html>
@@ -42,6 +44,7 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
         </head>
         <body>
             <script src="jquery.js"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
             <script>
         
             // Aqui vai o código.
@@ -50,8 +53,19 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
         </body>
         </html>
 
+### Sintaxe 
 
-### Seletores do Jquery X seletores do objeto document
+    $("seletor").ação() 
+
+O $ dá acesso ao jQuery Selector para encontrar no HTML o elemento desejado. 
+
+Também podemos usar também uma função dentro da ação:
+
+    $("seletor").ação(function(){}) 
+
+
+### Exemplos de seletores do Jquery
+
 
 * $("p") – seleciona todos os elementos **\<p>**
 * $("[href]") – seleciona todos os elementos que possuem o **atributo** href
@@ -65,5 +79,80 @@ Sugestão: mostrar alguma outra biblioteca que use o Jquery para efeitos (ex: ht
 * $(":odd") – seleciona todos os **elementos ímpares** (utilizável em tabelas, listas e afins)
             
 
+# Eventos 
+
+Eventos são as ações disparadas no momento em que é escutada. No JavaScript Vanila usamos algo parecido: "addEventListener".  
+
+Exemplo:
+
+        $("p").text("Hello World")
+    
+        $("h1").addClass("titulo-principal")
+
+
+# Métodos de Carregamento e Inicialização
+
+Quando é preciso usar uma função antes mesmo de os elementos serem carregados, pode-se usar o primeiro método .ready() ou apenas $ + function
+
+Quando é preciso usar uma função apenas depois que todos os documentos sejam carregados, usa-se o método load().
+
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                alert('DOM Carregado!');
+            });
+
+            $(function(){
+
+            });
+
+
+            $(window).load(funcion(){
+                alert('Elementos Carregados');  
+            });
+        </script>
+
+### Métodos para adicionar e modificar atributos usando o .attr()
+
+    Recebe dois argumentos: o atributo e seu valor. 
+
+    $('a').attr('href', 'https://www.google.com.br');
+
+#### Eventos de mouse:
+
+    $("h1").on("mouseenter", function(){
+        alert("mouse no h1");
+    })
+
+    $("p").one("mouseenter", function(){
+        alert("mouse no li");
+    })
+
+#### Eventos de click, show e hide:
+
+    $("#show").click(function(){
+        $("p").show()
+    });
+
+    $('#hide').click(function(){
+    $('p').hide();
+});
+
+#### Toggle
+
+    $('#toggle').click(function(){
+        $('.dois').toggle();
+    });
+
+#### FadeIn
+
+    $('#div1').fadeIn();
+
+#### FadeOut
+
+    $('#div2').fadeOut("slow");
+
+#### FadeToggle
+
+    $('#div3').fadeToggle(2000);
 
 
