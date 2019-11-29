@@ -110,54 +110,54 @@ Quando é preciso usar uma função apenas depois que todos os documentos sejam 
 
 Alguns eventos de navegador são conhecidos como **error**, **resize** ou **scroll**. 
 
-* Evento de **erro**:
+#### Evento de **erro**:
     
-    $('img').error(function(){
-        $('img').attr('src', 'img/error.jpg');
-    });
+        $('img').error(function(){
+            $('img').attr('src', 'img/error.jpg');
+        });
 
-    $('img').error(function(){
-        let imagem = $(this).attr('src');
-        alert('imagem' +imagem+'indisponível');
-        $('img').attr('src', 'img/error.jpg');
-    });
+        $('img').error(function(){
+            let imagem = $(this).attr('src');
+            alert('imagem' +imagem+'indisponível');
+            $('img').attr('src', 'img/error.jpg');
+        });
 
-* Evento de **resize**, para aumentar ou diminuir uma imagem de acordo com as dimensões do navegador, por exemplo:
+#### Evento de **resize**, para aumentar ou diminuir uma imagem de acordo com as dimensões do navegador, por exemplo:
 
-    $('img').width($(window).width()).height($(window).height); 
-    // aqui acontecem dois eventos: a largura da imagem puxa a largura da janela, assim como a altura. 
+        $('img').width($(window).width()).height($(window).height); 
+        // aqui acontecem dois eventos: a largura da imagem puxa a largura da janela, assim como a altura. 
 
 Para esse evento ser disparado cada vez que a janela muda de tamanho, é necessário chamar o evento de resize:
 
-    $('img').width($(window).width()).height($(window).height); 
-    $(window).resize(function(){
         $('img').width($(window).width()).height($(window).height); 
-    });
-    
+        $(window).resize(function(){
+            $('img').width($(window).width()).height($(window).height); 
+        });
+        
 
-* Evento de **scroll**
+#### Evento de **scroll**
 
 Evento disparado com o scroll da janela.
 
-    $(window).scroll(function(){
-        $('img').fadeOut('1000');
-    });
+        $(window).scroll(function(){
+            $('img').fadeOut('1000');
+        });
 
 OBS: Para decobrir o tamanho do scroll:
 
-    $('body').css('height','2500px');
-    
-        $(window).scroll(function(){
-            let topo = $(window).scrollTop();
-            // alert(topo);
-            // ou console.log(topo);
+        $('body').css('height','2500px');
+        
+            $(window).scroll(function(){
+                let topo = $(window).scrollTop();
+                // alert(topo);
+                // ou console.log(topo);
 
-        if (topo > 400){
-            $('img').fadeOut('1000');
-        } else {
-            $('img').fadeIn('1000');
-        }
-    });
+            if (topo > 400){
+                $('img').fadeOut('1000');
+            } else {
+                $('img').fadeIn('1000');
+            }
+        });
     
 
 ### Eventos de mouse:
