@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0;      
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background: url(./img/ales-krivec-QnNqGoCnBg0-unsplash.jpg) no-repeat center center fixed;
+}
+
+.container{
+    width: 40%;
+}
+
+.content{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+}
+
+p{
+    text-align: center;
+}
+
+h2, h3{
+    margin: 10px;
+    color: #f66;
+}
+
+ul{
+    list-style-type: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+label{
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+}
+
+input{
+    border-radius: 2px;
+    border: none;
+    padding: 3px;
+}
+
+textarea{
+    border-radius: 2px;
+    border: none;
+    padding: 3px;
+    resize: none
+}
+
+.btn{
+    background-color: #f66;
+    padding: 5px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.social-media a {
+    text-decoration: none;
+    margin: 10px;
+    color: #f66;
+}
+
+.social-media a:hover {
+    color: rgb(209, 54, 54);
+}
