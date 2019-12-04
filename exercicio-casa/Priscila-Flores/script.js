@@ -37,7 +37,9 @@ $(document).ready(function () {
     })
     // Ao clicar em Enviar, o formulário deve desaparecer e uma mensagem de 'Seu formulário foi enviado' deve aparecer na tela. Essa mensagem pode ser gerada dinamicamente em jQuery
     $('#btn').click(function () {
-        $('.formulario').hide();
-        alert('Seu formulário foi enviado');
+        $('.formulario').hide(function(){
+            alert('Seu formulário foi enviado');
+        });
+
     });
 });
