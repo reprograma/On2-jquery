@@ -49,7 +49,7 @@
 
 
     <script type='text/javascript' src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script type='text/javascript'>
+    <script type='text/javascript' src="script.js">
 
 
         $(function () {
@@ -61,12 +61,33 @@
 
             // ao clicar em show, mostrar a div azul
 
+            $(".ev2").click(function(){
+                    ex.show("slow");
+                    ex.text("voltei");
+            })
+
 
             // alternar entre esconder e mostrar a div azul
 
+            $(".ev3").click(function(){
+                ex.toggle("slow");
+
+            })
 
             //disparar os mesmos eventos ao escrever no input o comando
+                const imput =$(".ev4");
 
+
+                input.keyup(function(){
+                    let texto = $(this).val();
+
+                    if(texto =="esconder"){
+                        ex.hide("slow");
+                    }else if(texto == "mostrar"){
+                        ex.show("slow");
+                    }else if()
+                    
+                })
 
         })
 
