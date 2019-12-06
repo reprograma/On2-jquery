@@ -64,16 +64,17 @@
             //passar um evento de clique no .ev1 que irá:
             //mudar a cor do background
             //mudar o texto da div com classe .ex1 para "Você Clicou!
-            
-            $(".ev1").click(function(){
-                $(this).css("background","red");
-                ex1.text("Você clicou 1 vez");
-            });
-      
+
+            const ex = $('.ex1');
+   
             // passar evento de double click para a classe .ev2 que irá:
             //mudar a cor do background
             //mudar o texto da div .ex1 para "Você deu dois cliques!"
-
+            
+            $('.ev2').dblclick(function(){
+                $(this).css('background', 'red')
+                ex.text('Você deu dois cliques!')
+            });
 
             //colocar foco no input .ev3
             //mudar a cor do background
@@ -87,30 +88,32 @@
                 ex1.text("Você tirou o foco");
             });
 
-
             //tirar foco no input .ev3
             //mudar a cor do background
             //mudar o texto da div .ex1 para "Você tirou Foco"
 
- 
+
+            $('.ev3').focusin(function(){
+                $(this).css('background', '#ccc');
+                ex.text('Você deu Foco');
+            }).focusout(function(){
+                $(this).css('background', '#000');
+                ex.text('Você tirou foco!');
+            });
+
             //passar evento de mouse pelo parágrafo .ev4
             //mudar a cor do background
             //mudar o texto  da div ex1 para Você passou o mouse
-            $(.ev4).hover()
+
 
             //clicar e segurar o parágrafo .ev5
             //mudar a cor do background
             //mudar o texto  da div ex1 para "Você clicou e segurou!"
-            $(.ev5)
 
             //soltar o mouse no parágrafo .ev5
             //mudar a cor do background
             //mudar o texto  da div ex1 para "Você soltou o mouse!"
-            $(".ev5")mousedown(function(){
-                $(this).css("background","yellow");
-                ex1.text("Você clicou e segurou");
-                
-            })
+
 
         })
     

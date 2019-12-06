@@ -78,28 +78,55 @@
         $(function () {
 
             // ao digitar no input, mudar a cor do valor digitado usando o focusin()
-                const input =$("input");
-                
 
             // toda vez que for pressionada uma tecla, o valor digitado vai ser jogado para a div .ex1
+            const ex = $('.ex1')
+
+            // $('.key').keypress(function () {
+            //     ex.text($(this).val());
+            // })
+
+            // $('.key').keydown(function () {
+            //     ex.text($(this).val());
+            // })
+
+            // $('.key').keyup(function () {
+            //     ex.text($(this).val());
+            // })
 
             //Evento de Focus, 
             //levar o valor do input para a div superior
             //pular para o próximo campo
 
 
+            $('.ev1').focus(function(){
+                ex.text($(this).attr('title'));
+            }).keyup(function(){
+                if($(this).val() == 'pontocom'){
+                    $('.ev2').focus()
+                }
+            })
 
             //quando sair do campo Nome, trocar o texto que está na div
 
-
+            $('.ev1').blur(function(){
+                ex.text("Saída do campo: "+$(this).attr('name'));
+            })
 
             // notificar na div o valor do campo alterado
-
+            $('.ev3').change(function(){
+                ex.text("Campo alterado: "+$(this).val());
+            })
 
             //quando clicar em Selecionar, o texto do <textarea> será selecionado
             //prevenir o envio do formulário ao clicar em selecionar
 
-
+            $('.selecionar').click(function(){
+                $('.ev4').select();
+                $('form').submit(function(){
+                    return false;
+                })
+            })
 
 
 
