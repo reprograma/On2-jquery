@@ -57,21 +57,39 @@
 
 
         $(function(){
-
+            
+            const ex1 = $('.ex1');
             
             //passar um evento de clique no .ev1 que irá:
             //mudar a cor do background
             //mudar o texto da div com classe .ex1 para "Você Clicou!
             
+            $('.ev1').click(function(){
+                $(this).css('background','red');
+                ex1.text('Você clicou 1 vez');
+            });
       
             // passar evento de double click para a classe .ev2 que irá:
             //mudar a cor do background
             //mudar o texto da div .ex1 para "Você deu dois cliques!"
 
+            $('.ev2').dblclick(function(){
+                $(this).css('background','orange');
+                ex1.text('Você clicou 2 vezes');
+            });
+
 
             //colocar foco no input .ev3
             //mudar a cor do background
-            //mudar o texto da dix .ex1 para "Você deu Foco"
+            //mudar o texto da div .ex1 para "Você deu Foco"
+            
+            $('.ev3').focusin(function(){
+                $(this).css('background','blue');
+                ex1.text('Você deu foco');
+            }).focusout(function(){
+                $(this).css('background','black');
+                ex1.text('Você tirou o foco');
+            });
 
 
             //tirar foco no input .ev3
@@ -82,7 +100,14 @@
             //passar evento de mouse pelo parágrafo .ev4
             //mudar a cor do background
             //mudar o texto  da div ex1 para Você passou o mouse
-
+            
+            $('.ev4').hover(function(){
+                $(this).css('background', 'purple')
+                ex1.text("Você passou o mouse");
+            }).mouseleave(function(){
+                $(this).css('background', 'black')
+                ex1.text("Você tirou o mouse");
+            });
 
             //clicar e segurar o parágrafo .ev5
             //mudar a cor do background
@@ -93,6 +118,13 @@
             //mudar a cor do background
             //mudar o texto  da div ex1 para "Você soltou o mouse!"
 
+            $('.ev5').mousedown(function(){
+                $(this).css('background', 'yellow')
+                ex1.text("Você clicou como mause");
+            }).mouseup(function(){
+                $(this).css('background', 'black')
+                ex1.text("Você soltou o mouse");
+            });
 
         })
     

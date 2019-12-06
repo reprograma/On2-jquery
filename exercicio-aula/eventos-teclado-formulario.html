@@ -54,16 +54,16 @@
     <div class="ex1">Aguardando a ação.</div>
     <form action="">
         <label>
-            <input type="text" placeholder="Nome" title='Digite seu nome' class='ev1' name='nome'>
+            <input type="text" placeholder="Nome" title='Digite seu nome' class='campos ev1' name='nome'>
         </label>
         <label>
-            <input type="text" placeholder="Email" title='Digite seu email' class='ev2' name='email'>
+            <input type="text" placeholder="Email" title='Digite seu email' class='campos ev2' name='email'>
         </label>
         <label>
-            <input type="text" placeholder="Endereço" title='Digite seu endereço' class='ev3'>
+            <input type="text" placeholder="Endereço" title='Digite seu endereço' class='campos ev3'>
         </label>
         <label>
-            <textarea class="key ev4" rows="3" title='Digite sua mensagem' placeholder='Mensagem'></textarea>
+            <textarea rows="3" title='Digite sua mensagem' class='campos ev4' placeholder='Mensagem'></textarea>
         </label>
         <label>
             <button class="selecionar">Selecionar</button>
@@ -76,28 +76,54 @@
 
 
         $(function () {
+            const ex1 = $('.ex1');
 
             // ao digitar no input, mudar a cor do valor digitado usando o focusin()
+            const input = $('input');
+
+            input.focusin(function(){
+                input.css('color', 'red');
+            })
 
 
             // toda vez que for pressionada uma tecla, o valor digitado vai ser jogado para a div .ex1
+            // const campos = $('.campos');
 
+            // campos.keyup(function(){
+            //     ex1.text($(this).val());
+            // })
+                
+            
             //Evento de Focus, 
             //levar o valor do input para a div superior
             //pular para o próximo campo
-
+            // $('ev1').focus(function(){
+            //     ex1.text($(this).va());
+            // }).keyup(function(){
+                
+            // })
 
 
             //quando sair do campo Nome, trocar o texto que está na div
-
+            $('.ev1').blur(function(){
+                ex1.text('Saída do campo: '+$(this).attr('name'));
+            })
 
 
             // notificar na div o valor do campo alterado
-
+            $('.ev3').change(function(){
+                ex1.text("Campo Alterado: "+$(this).val())
+            })
 
             //quando clicar em Selecionar, o texto do <textarea> será selecionado
             //prevenir o envio do formulário ao clicar em selecionar
-
+            $(".selecionar").click(function(){
+                $(".ev4").select();
+                // e.preventDeFault()
+                $("form").submit(function(){
+                    return false;
+                })
+            })
 
 
 

@@ -35,7 +35,7 @@
         }
     </style>
 
-    <title>Reprograma jQuery - eventos de mouse</title>
+    <title>Reprograma jQuery - eventos de hide/show toggle</title>
 
 </head>
 
@@ -57,16 +57,48 @@
             const ex = $('.ex1');
 
             // ao clicar no primeiro botão, esconder a div azul
-
+            $('.ev1').click(function () {
+                ex.hide("slow");
+                ex.text('fui')
+            })
 
             // ao clicar em show, mostrar a div azul
-
+            $('.ev2').click(function () {
+                ex.show("fast");
+                ex.text('voltei')
+            })
 
             // alternar entre esconder e mostrar a div azul
-
+            $('.ev3').dblclick(function () {
+                ex.toggle('slow');
+            });
 
             //disparar os mesmos eventos ao escrever no input o comando
+            // let texto = $('.ev4');
 
+            // input.keyup(function(){
+            //     let texto = $(this).val();
+
+            //     if(texto == 'esconder'){
+            //         ex.hide('slow');
+            //     }
+            // })
+
+            const input = $(".ev4");
+
+            input.keyup(function (){
+                let texto = $(this).val();
+
+                if (texto == 'esconder'){
+                    ex.hide('slow');
+                }
+                if (texto == 'mostrar'){
+                    ex.show('slow');
+                }
+                if (texto == 'alternar'){
+                    ex.toggle('slow');
+                }
+            })
 
         })
 
