@@ -11,4 +11,29 @@
 // Ao clicar em Enviar, o formulário deve desaparecer e uma mensagem de "Seu formulário foi enviado" deve aparecer na tela. Essa mensagem pode ser gerada dinamicamente em jQuery
 
 
+$(function(){
+
+    $(".product_list").hide()
+
+
+    $(".subtitle").click(function(){
+        $(".product_list").show("slow");
+    });
+
+    $(".product_item").click(function(){
+        $("body").css("background","purple");
+    })
+
+    $(".inscrevase_area").prepend("<button class='inscrevaseBtn'>Inscreva-se</button>"); //fica no começo da div
+
+    $(".inscrevase_area").append("<button class='inscrevaseBtn'>Inscreva-se</button>"); // fica no final da div
+
+    $(".btn-enviar").click(function(){
+        $(".formulario").hide("slow");
+        $(".inscrevase_area").append("<p>Seu formulário foi enviado</p>");
+    })
+
+
+});
+
 
