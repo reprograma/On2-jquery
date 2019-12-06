@@ -6,10 +6,8 @@ $(document).ready(function() {
     $(".product_list").toggle("slow");
   });
 
-  product_item;
-
   $(".product_item").click(function() {
-    $(".container").css("background", "");
+    $(".container").css("background", "lightgrey");
   });
 });
 
