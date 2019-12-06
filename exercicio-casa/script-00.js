@@ -25,7 +25,6 @@ $(function (){
 
 // Inicie o jQuery no seu documento
 
-
 // Faça com que a lista de conteúdo apareça ao clicar em Confira
 
 
