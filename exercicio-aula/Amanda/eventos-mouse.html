@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    
+    <style>
+        
+            body{
+                font:14px;
+            }
+    
+            .ex1{
+                width: 460px;
+                padding: 20px;
+                background: #1e90ff;
+                margin: 0 auto;
+                text-align: center;
+                color: #fff;
+            }
+
+            p, input{
+                width: 480px;
+                padding: 5px;
+                background: #000;
+                margin: 0 auto;
+                text-align: center;
+                color: #fff;
+                border: 5px solid #ccc;
+                margin-top: 10px;
+                display: block;
+            }
+    
+            
+    </style>
+    
+    <title>Reprograma jQuery - eventos de mouse</title>
+
+</head>
+
+<body>
+
+    <div class="ex1">Aguardando Ação</div>
+    <p class="ev1">Um clique</p>
+    <p class="ev2">Dois cliques</p>
+    <input type="text" class="ev3">
+    <p class="ev4">Passe o mouse</p>
+    <p class="ev5">Clique e solte</p>
+
+
+
+    <script type='text/javascript' src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script type='text/javascript'>
+
+
+
+
+        $(function(){
+
+            const ex1 = $(".ex1");
+
+            //passar um evento de clique no .ev1 que irá:
+            //mudar a cor do background
+            //mudar o texto da div com classe .ex1 para "Você Clicou!
+            
+      $(".ev1").click(function(){
+      $(this).css("background", "red");
+      ex1.text("você clicou 1 vez");
+
+      });
+
+
+
+            // passar evento de double click para a classe .ev2 que irá:
+            //mudar a cor do background
+            //mudar o texto da div .ex1 para "Você deu dois cliques!"
+
+    $(".ev2").dblclick(function(){
+        $(this).css("background", "orange");
+        ex1.text("Você clicou 2 vezes");
+
+    });
+
+            //colocar foco no input .ev3
+            //mudar a cor do background
+            //mudar o texto da div .ex1 para "Você deu Foco"
+
+            //tirar foco no input .ev3
+            //mudar a cor do background
+            //mudar o texto da div .ex1 para "Você tirou Foco"
+
+
+    $(".ev3").focusin(function(){
+        $(this).css("background", "blue");
+        ex1.text ("Você deu foco");
+
+    }).focusout(function(){
+        $(this).css("background", "#000");
+        ex1.text("Você tirou o foco")
+
+
+    })
+
+
+ 
+            //passar evento de mouse pelo parágrafo .ev4
+            //mudar a cor do background
+            //mudar o texto  da div ex1 para Você passou o mouse
+
+    $(".ev4").hover(function(){
+        $(this).css("background", "brown");
+        ex1.text("Você passou o mouse");
+
+    }).mouseleave(function(){
+        $(this).css("background", "#000");
+        ex1.text("Você tirou o mouse");
+
+    })
+
+
+
+            //clicar e segurar o parágrafo .ev5
+            //mudar a cor do background
+            //mudar o texto  da div ex1 para "Você clicou e segurou!"
+
+
+            //soltar o mouse no parágrafo .ev5
+            //mudar a cor do background
+            //mudar o texto  da div ex1 para "Você soltou o mouse!"
+    
+    $(".ev5").mousedown(function(){
+        $(this).css("background", "yellow");
+        ex1.text("Você clicou e segurou");
+    }).mouseup(function(){
+        $(this).css("background", "orange");
+        ex1.text("Você soltou o mouse");
+
+
+    })
+
+        })
+    
+    </script>
+</body>
+
+</html>

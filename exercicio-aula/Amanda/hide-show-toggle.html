@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font: 14px;
+        }
+
+        .ex1 {
+            width: 460px;
+            padding: 20px;
+            background: #1e90ff;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+        }
+
+        p,
+        input {
+            width: 480px;
+            padding: 5px;
+            background: #000;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+            border: 5px solid #ccc;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+
+    <title>Reprograma jQuery - eventos de mouse</title>
+
+</head>
+
+<body>
+
+    <div class="ex1">Aguardando Ação</div>
+    <p class="ev1">hide</p>
+    <p class="ev2">show</p>
+    <p class="ev3">toggle</p>
+    <input type="text" class='ev4'>
+
+
+    <script type='text/javascript' src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script type='text/javascript'>
+
+
+        $(function () {
+
+            const ex = $('.ex1');
+
+            // ao clicar no primeiro botão, esconder a div azul
+
+            $(".ev1").click(function(){
+                $(this).css("color", "yellow");
+                ex.hide("slow");
+                ex.text("fui!");
+            })
+
+
+
+            // ao clicar em show, mostrar a div azul
+            $(".ev2").click(function(){
+                ex.show("slow");
+                ex.text("voltei!");
+
+            })
+
+            // alternar entre esconder e mostrar a div azul
+            $(".ev3").dblclick(function(){
+                ex.toggle("slow");
+
+            })
+
+            //disparar os mesmos eventos ao escrever no input o comando
+
+            const input = $(".ev4");
+
+            input.keyup(function(){
+                let texto = $(this).val();
+
+                if(texto == "esconder"){
+                    ex.hide("slow")
+                }
+                if (texto == "mostrar"){
+                 ex.show("slow");   
+                }
+                if(texto == "alternar"){
+                    ex.toggle("slow");
+                }
+
+            })
+
+           
+
+        })
+
+
+
+
+
+        
+
+    </script>
+</body>
+
+</html>
