@@ -27,7 +27,7 @@
             padding: 5px;
             background: #000;
             margin: 0 auto;
-            text-align: center;
+            text-align: center; 
             color: #fff;
             border: 5px solid #ccc;
             margin-top: 10px;
@@ -58,14 +58,42 @@
 
             // ao clicar no primeiro botão, esconder a div azul
 
+            $('.ev1').click(function () {
+                ex.hide('slow'); //sllow, fast ou segundos
+            });
 
             // ao clicar em show, mostrar a div azul
 
 
-            // alternar entre esconder e mostrar a div azul
+            $('.ev2').click(function () {
+                ex.show('slow'); //sllow, fast ou segundos
+            });
 
+            // alternar entre esconder e mostrar a div azul
+            $('.ev3').click(function () {
+                ex.toggle('slow'); //sllow, fast ou segundos
+            });
+
+            const input = $('.ev4')
 
             //disparar os mesmos eventos ao escrever no input o comando
+
+            input.keyup(function(){
+                let texto = $(this).val();
+
+                if(texto == 'hide'){
+                    ex.hide('slow');
+                }
+                if(texto == 'show'){
+                    ex.show('slow');
+                }
+                if(texto == 'toggle'){
+                    ex.toggle('slow');
+                }
+            })
+
+
+
 
 
         })
