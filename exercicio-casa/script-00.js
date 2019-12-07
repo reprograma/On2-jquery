@@ -27,7 +27,6 @@ $(function (){
 
 // Faça com que a lista de conteúdo apareça ao clicar em Confira
 
-
 // Ao clicar em cada um dos conteúdos, mude a cor de fundo do site. Se quiser, pode trabalhar com transparências usando o rgba.
 
 // Crie um botão Inscreva-se
