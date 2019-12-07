@@ -17,18 +17,17 @@ $(function(){
 
     $(".product_list").hide()
 
-
     $(".subtitle").click(function(){
         $(".product_list").show("slow");
     });
 
     $(".product_item").click(function(){
-        $("body").css("background","purple");
+        $("body").css("background","LightPink");
     })
 
     $(".inscrevase_area").prepend("<button class='inscrevaseBtn'>Inscreva-se</button>"); //fica no começo da div
 
-    $(".inscrevase_area").append("<button class='inscrevaseBtn'>Inscreva-se</button>"); // fica no final da div
+    //$(".inscrevase_area").append("<button class='inscrevaseBtn'>Inscreva-se</button>"); // fica no final da div
 
     $(".btn-enviar").click(function(){
         $(".formulario").hide("slow");
