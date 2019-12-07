@@ -1,8 +1,22 @@
 // Inicie o jQuery no seu documento
 
+$(function(){
+
+
 // Faça com que a lista de conteúdo apareça ao clicar em Confira
 
+$('.product_list').hide()
+
+
+$('.subtitle').click(function(){
+        $('.product_list').show('slow');
+});
+
 // Ao clicar em cada um dos conteúdos, mude a cor de fundo do site. Se quiser, pode trabalhar com transparências usando o rgba.
+
+$('.product_item').click(function(){
+    $('body').css('background', '#DFAEFC');
+});
 
 // Crie um botão Inscreva-se
 
@@ -10,5 +24,12 @@
 
 // Ao clicar em Enviar, o formulário deve desaparecer e uma mensagem de "Seu formulário foi enviado" deve aparecer na tela. Essa mensagem pode ser gerada dinamicamente em jQuery
 
+$('.inscrevase_area').prepend("<button class='inscrevaseBtn'>Inscreva-se</button>");
 
 
+$('.btn').click(function(){
+    $(".formulario").hide("slow");
+    $(".inscrevase_area").append("<p>Seu formulário foi enviado</p>");
+});
+
+});
